@@ -2,28 +2,22 @@
 
 class Figure {
 public:
-	Figure( int var = 0 ) { sides = var; }
+	Figure( int sides_ = 0 ) { sides = sides_; }
 	int get_sides() { return sides; }
 	std::string get_intro() { return intro; }
-private:
+protected :
 	int sides;
 	std::string intro = "Фигура: ";
 };
 
 class Triangle : public Figure {
 public:
-	Triangle(int var = 3):Figure(var) {}
-	std::string get_intro() { return intro; }
-private:
-	std::string intro = "Треугольник: ";
+	Triangle() { intro = "Треугольник: "; sides = 3; }
 };
 
 class Quadrangle : public Figure {
 public:
-	Quadrangle(int var = 4):Figure(var) {}
-	std::string get_intro() { return intro; }
-private:
-	std::string intro = "Четырехугольник: ";
+	Quadrangle() { intro = "Четырехугольник: "; sides = 4; }
 };
 
 int main(int argc, char** argv) {
